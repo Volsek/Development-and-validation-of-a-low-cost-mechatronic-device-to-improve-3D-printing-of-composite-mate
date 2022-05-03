@@ -1,0 +1,55 @@
+﻿<Window x:Class="Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Height="600" Width="400" WindowStyle="SingleBorderWindow" Background="#FF004267">
+
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="LoadButton" Grid.Row="0" Content="Load .CTB File" Background="#FF4F5050" Foreground="#FFFFFDFD" Click="LoadButton_Click" Width="140" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+        <Label x:Name="LoadLabel" Content="?!?!?!?!?!?!" HorizontalAlignment="Center" VerticalAlignment="Bottom" Visibility="Hidden" FontSize="20" />
+
+        <Grid Grid.Row="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="LiftHeightLabel" Grid.Column="0" Grid.Row="0" Content="Lift Height" Foreground="#FFD4D4D4" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+            <xctk:DecimalUpDown x:Name="LiftHeightInput" Grid.Column="1" Grid.Row="0" FormatString="F1" DefaultValue="200.0"  Value="200.0" Increment=".1" Minimum="0.0" Maximum="200.0" AutomationProperties.IsRequiredForForm="True" Height="30" HorizontalAlignment="Center" Width="150" />
+
+            <Label x:Name="LiftSpeedLabel" Grid.Column="0" Grid.Row="1" Content="Lift Speed" Foreground="#FFD4D4D4" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+            <xctk:DecimalUpDown x:Name="LiftSpeedInput" Grid.Column="1" Grid.Row="1"  FormatString="F1" DefaultValue="150.0"  Value="150.0" Increment=".1" Minimum="1.0" Maximum="500.0" AutomationProperties.IsRequiredForForm="True" Width="150" Height="30" />
+
+            <Label x:Name="WaitTimeLabel" Grid.Column="0" Grid.Row="2" Content="Wait Time" Foreground="#FFD4D4D4" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+            <xctk:DecimalUpDown x:Name="WaitTimeInput" Grid.Column="1" Grid.Row="2" FormatString="F1" DefaultValue="5.0"  Value="5.0" Increment=".1" Minimum="0.0" Maximum="3600.0" AutomationProperties.IsRequiredForForm="True" Width="150" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+            <Label x:Name="FrequencyLabel" Grid.Column="0" Grid.Row="3" Content="Mix every which layer?" Foreground="#FFD4D4D4" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+            <xctk:IntegerUpDown x:Name="LayerInput" Grid.Column="1" Grid.Row="3"  DefaultValue="5"  Value="5" Increment="1" Minimum="1" HorizontalAlignment="Center" AutomationProperties.IsRequiredForForm="True" Width="150" Height="30" RenderTransformOrigin="0.935,1.791" VerticalAlignment="Center" />
+        </Grid>
+
+        <Button x:Name="SaveButton" Grid.Row="2" Content="Proccess" Background="#FF4F5050" Foreground="#FFFFFDFD" Click="SaveButton_Click" Width="140" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </Grid>
+</Window>
